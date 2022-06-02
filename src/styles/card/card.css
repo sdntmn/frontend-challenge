@@ -1,0 +1,42 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.card__image {
+  background-size: cover;
+  min-height: 225px;
+}
+
+.card:hover {
+  transform: scale(1.138);
+  box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.24), 0px 9px 18px rgba(0, 0, 0, 0.18);
+}
+
+.card:hover .card__button {
+  visibility: visible;
+  position: relative;
+  top: 160px;
+  left: 160px;
+  width: 48px;
+  height: 48px;
+  background: transparent url("../../images/Vector.svg") no-repeat;
+  background-size: 48px 48px;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: #f24e1e;
+}
+
+.card__button {
+  visibility: hidden;
+}
+
+.card:hover .card__button-is-active {
+  background: transparent url("../../images/favorite.svg") no-repeat;
+}
+/* .card__image:checked {
+  margin-left: 25px;
+  border: 1px solid blue;
+} */
