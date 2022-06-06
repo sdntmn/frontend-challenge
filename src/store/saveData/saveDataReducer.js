@@ -1,13 +1,8 @@
-import {
-  SET_SAVE_DATA,
-  SET_SAVE_LOADING,
-  SET_SAVE_ERROR,
-} from "./saveDataActions";
+import { SET_SAVE_DATA, SET_SAVE } from "./saveDataActions";
 
 const initialState = {
   status: false,
   listSave: [],
-  error: null,
 };
 
 export const setSaveCard = (state = initialState, { type, payload }) => {
@@ -16,20 +11,14 @@ export const setSaveCard = (state = initialState, { type, payload }) => {
       return {
         ...state,
         list: payload,
-        status: true,
+        status: false,
       };
-    case SET_SAVE_LOADING:
+    case SET_SAVE:
       return {
         ...state,
-        status: "loading",
-        error: null,
+        status: "true",
       };
-    case SET_SAVE_ERROR:
-      return {
-        ...state,
-        status: "rejected",
-        error: payload,
-      };
+
     default:
       return state;
   }
