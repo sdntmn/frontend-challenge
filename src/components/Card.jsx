@@ -27,3 +27,5 @@ function Card({ card }) {
 }
 
 export default Card;
+
+//https://dev.to/link2twenty/react-redux-and-localstorage-2lih
