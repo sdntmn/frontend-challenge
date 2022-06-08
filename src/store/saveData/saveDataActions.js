@@ -1,22 +1,11 @@
-export const SET_SAVE_DATA = "@@saveData/SET_SAVE_DATA";
-export const SET_SAVE = "@@saveData/SET_SAVE";
-// export const SET_SAVE_ERROR = "@@saveData/SET_SAVE_ERROR";
+import { ADD_CARD, REMOVE_CARD } from "./saveDataConst.js";
 
-const setSaveCard = (cards) => ({
-  type: SET_SAVE_DATA,
-  payload: cards,
+export const addInFavoriteArray = (card) => ({
+  type: ADD_CARD,
+  card: card,
 });
 
-const setSave = () => ({
-  type: SET_SAVE,
+export const removeIsFavoriteArray = (id) => ({
+  type: REMOVE_CARD,
+  id,
 });
-
-// const setSaveError = (err) => ({
-//   type: SET_SAVE_ERROR,
-//   payload: err,
-// });
-
-export const saveCardData = () => (dispatch) => {
-  dispatch(setSaveCard());
-  dispatch(setSave());
-};

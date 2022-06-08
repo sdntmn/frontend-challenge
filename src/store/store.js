@@ -3,10 +3,10 @@ import { rootReducer } from "./rootReducer";
 import thunk from "redux-thunk";
 
 function saveToLocalStorage(state) {
-  console.log(state);
+  //console.log(state);
   try {
-    const serialisedState = JSON.stringify(state.saveCard);
-    localStorage.setItem("saveList", serialisedState);
+    const serialisedState = JSON.stringify(state.favoriteCards);
+    localStorage.setItem("favoriteCards", serialisedState);
   } catch (e) {
     console.warn(e);
   }
@@ -14,7 +14,7 @@ function saveToLocalStorage(state) {
 
 function loadFromLocalStorage() {
   try {
-    const serialisedState = localStorage.getItem("saveList");
+    const serialisedState = localStorage.getItem("favoriteCards");
     if (serialisedState === null) return undefined;
     return JSON.parse(serialisedState);
   } catch (e) {

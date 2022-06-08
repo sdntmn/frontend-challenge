@@ -1,25 +1,16 @@
-import { SET_SAVE_DATA, SET_SAVE } from "./saveDataActions";
+import { ADD_CARD, REMOVE_CARD } from "./saveDataConst.js";
 
-const initialState = {
-  status: false,
-  listSave: [],
-};
+export const favoriteCards = (state = [], action) => {
+  switch (action.type) {
+    case ADD_CARD: {
+      return [...state, action.card];
+    }
 
-export const setSaveCard = (state = initialState, { type, payload }) => {
-  switch (type) {
-    case SET_SAVE_DATA:
-      return {
-        ...state,
-        list: payload,
-        status: false,
-      };
-    case SET_SAVE:
-      return {
-        ...state,
-        status: "true",
-      };
-
-    default:
+    case REMOVE_CARD: {
+      return state.filter((card) => card.id !== action.id);
+    }
+    default: {
       return state;
+    }
   }
 };

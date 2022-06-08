@@ -1,24 +1,37 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import { selectAllCard } from "../store/stateData/catsDataSelector";
+import { useSelector, useDispatch } from "react-redux";
+import { selectAllFavoriteCard } from "../store/saveData/saveDataSelector";
+import {
+  addInFavoriteArray,
+  removeIsFavoriteArray,
+} from "../store/saveData/saveDataActions";
 
 function Card({ card }) {
   const cardStyle = { backgroundImage: `url(${card.url})` };
-  const cardCats = useSelector(selectAllCard);
-  console.log(card);
-  console.log(cardCats);
-
-  const [cardId, setCardId] = useState("");
+  const dispatch = useDispatch();
+  const arrayFavoriteCard = useSelector(selectAllFavoriteCard);
+  const [like, setLike] = useState(false);
 
   const onClick = () => {
-    setCardId(card.id);
+    const favorite = arrayFavoriteCard.some((cardId) => cardId.id === card.id);
+    if (!favorite) {
+      setLike(true);
+      dispatch(addInFavoriteArray(card));
+    } else {
+      dispatch(removeIsFavoriteArray(card.id));
+      setLike(false);
+    }
   };
+
+  const cardStyleFavorite = `card__button ${
+    like ? "card__button-is-active" : ""
+  }`;
 
   return (
     <li className='card'>
       <div className='card__image' style={cardStyle}>
         <button
-          className='card__button card__button-is-active'
+          className={cardStyleFavorite}
           type='button'
           onClick={onClick}></button>
       </div>
@@ -29,3 +42,4 @@ function Card({ card }) {
 export default Card;
 
 //https://dev.to/link2twenty/react-redux-and-localstorage-2lih
+// `card__button ${like ? "" : "card__button-is-active"}`

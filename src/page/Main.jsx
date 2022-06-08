@@ -2,12 +2,15 @@ import React, { useEffect } from "react";
 import Card from "../components/Card";
 import { loadCardData } from "../store/stateData/catsDataActions";
 import { useDispatch, useSelector } from "react-redux";
-
 import { selectAllCard } from "../store/stateData/catsDataSelector";
+import { selectAllFavoriteCard } from "../store/saveData/saveDataSelector";
 
 function Main() {
   const dispatch = useDispatch();
   const cardCats = useSelector(selectAllCard);
+  const arrayFavoriteCard = useSelector(selectAllFavoriteCard);
+
+  console.log(arrayFavoriteCard);
 
   useEffect(() => {
     dispatch(loadCardData());
