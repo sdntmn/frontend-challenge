@@ -1,5 +1,10 @@
 # Используемые технологии
+
 -React, Redux, Axios
+
+# Ссылка
+
+- https://sdntmn.github.io/frontend-challenge/
 
 # Задание для Front-end стажёра
 
