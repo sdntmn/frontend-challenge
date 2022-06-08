@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/sdntmn/frontend-challenge/static/css/main.9bf4b9d0.css",
+    "main.js": "/sdntmn/frontend-challenge/static/js/main.77c29f44.js",
+    "static/js/787.28cb0dcd.chunk.js": "/sdntmn/frontend-challenge/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/sdntmn/frontend-challenge/index.html",
+    "static/media/Vector.svg": "/sdntmn/frontend-challenge/static/media/Vector.6adfe85f8b98c6dc6b44.svg",
+    "static/media/favorite.svg": "/sdntmn/frontend-challenge/static/media/favorite.f43b77fd39761ccb2ac4.svg",
+    "main.9bf4b9d0.css.map": "/sdntmn/frontend-challenge/static/css/main.9bf4b9d0.css.map",
+    "main.77c29f44.js.map": "/sdntmn/frontend-challenge/static/js/main.77c29f44.js.map",
+    "787.28cb0dcd.chunk.js.map": "/sdntmn/frontend-challenge/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9bf4b9d0.css",
+    "static/js/main.77c29f44.js"
+  ]
+}
